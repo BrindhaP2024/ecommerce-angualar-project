@@ -10,18 +10,18 @@ export interface login {
 }
 
 export interface product {
-  stock: any;
+  stock: number;
   specifications: any;
   id: number;
-  Stock: any;
-  Battery: any;
-  Camera: any;
+  // stock: any;
+  battery: any;
+  camera: any;
   display: any;
   general: any;
   performance: any;
   additionalImages: any;
   name: string;
-  price: number; // Ensure price is a number
+  price: number;
   category: string;
   color: string;
   image: string;
