@@ -13,6 +13,7 @@
           <p class="product-category">{{product.category}}</p>
           <p class="product-stock">{{product.stock}} left</p>
           <div class="product-footer">
+            <button [routerLink]="['/details', product.id]">View Product</button>
             <button class="add-to-cart-button" (click)="addToCart(product)">
               <i class="fa fa-cart-plus"></i>
             </button>

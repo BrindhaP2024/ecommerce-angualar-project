@@ -10,6 +10,7 @@ export interface login {
 }
 
 export interface product {
+  productId: any;
   stock: number;
   specifications: any;
   id: number;

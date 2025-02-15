@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   }
 
   listProducts(): void {
-    this.productService.getProductList().subscribe((result) => {
+    this.productService.productList().subscribe((result) => {
       this.productList = result;
     });
   }

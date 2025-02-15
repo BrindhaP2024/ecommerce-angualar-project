@@ -11,6 +11,7 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Component } from '@angular/core';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ProductDetailsComponent } from './components/productdetails/productdetails.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,7 @@ export const routes: Routes = [
   { path:"cartpage",component:CartPageComponent},
   { path:"dashboard",component:DashboardComponent},
   {path:'contact-form',component:ContactFormComponent} ,
-
+  { path: 'product-details/:productId', component: ProductDetailsComponent },
 
   { path: '**', redirectTo: 'login',title:'page-not-found'}
 ];

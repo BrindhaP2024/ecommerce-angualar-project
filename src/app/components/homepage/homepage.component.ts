@@ -2,19 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from '../about/about.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/products.service';
-import { product,cart } from '../../interfaces/data-type';
+import { product, cart } from '../../interfaces/data-type';
 import { ContactFormComponent } from "../contact-form/contact-form.component";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  providers: [DataService, HttpClient, RouterLink, CommonModule],
+  providers: [DataService, HttpClient, ProductService],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  imports: [CommonModule, ContactFormComponent]
+  imports: [CommonModule, RouterModule, ContactFormComponent]
 })
 export class HomepageComponent implements OnInit {
   products: any[] = [];

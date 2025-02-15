@@ -1,57 +1,27 @@
-<!-- <p>productdetails works!</p> -->
-<div class="product-details-container">
-  <div class="product-image-section">
-    <img [src]="productData().image" [alt]="productData().name" class="product-image" />
+<div class="row product-details" *ngIf="productData">
+  <div class="col-sm-6">
+    <img class="product-img" src="{{productData.image}}" alt="">
   </div>
-
-  <div class="product-info-section">
-    <h1 class="product-title">{{productData().name}}</h1>
-    <div class="product-price">${{productData().price}}</div>
-
-    <div class="product-color">
-      <span class="label">Color:</span>
-      <span class="value">{{productData().color}}</span>
-    </div>
-
-    <div class="quantity-control">
-      <button class="qty-btn" (click)="decrementQuantity()" [disabled]="quantity() <= 1">
-        <span class="material-icons">remove</span>
-      </button>
-      <span class="quantity">{{quantity()}}</span>
-      <button class="qty-btn" (click)="incrementQuantity()" [disabled]="quantity() >= productData().stock">
-        <span class="material-icons">add</span>
-      </button>
-    </div>
-    @if (isInCart()) {
-      <button class="remove-cart-btn" (click)="removeFromCart()">
-        Remove from Cart
-      </button>
-    } @else {
-      <button class="add-cart-btn" (click)="addToCart()" [disabled]="productData().stock === 0">
-        Add to Cart
-      </button>
-    }
-
-    <div class="product-details">
-      <div class="detail-section">
-        <h3>General</h3>
-        <p>{{productData().general}}</p>
-      </div>
-      <div class="detail-section">
-        <h3>Performance</h3>
-        <p>{{productData().performance}}</p>
-      </div>
-      <div class="detail-section">
-        <h3>Display</h3>
-        <p>{{productData().display}}</p>
-      </div>
-      <div class="detail-section">
-        <h3>Camera</h3>
-        <p>{{productData().camera}}</p>
-      </div>
-      <div class="detail-section">
-        <h3>Battery</h3>
-        <p>{{productData().battery}}</p>
+  <div class="col-sm-6">
+    <div class="details">
+      <h1>{{productData.name}}</h1>
+      <h3>Price in Rs: {{productData.price}}</h3>
+      <div>Color:<h3 [style.backgroundColor]="productData.color" class="product-color"></h3></div>
+      <h6>Category: {{productData.category}}</h6>
+      <h6>General: {{productData.general}}</h6>
+      <h6>Performance: {{productData.performance}}</h6>
+      <h6>Display: {{productData.display}}</h6>
+      <h6>Camera: {{productData.camera}}</h6>
+      <h6>Battery: {{productData.battery}}</h6>
+      <h5>Stock: {{productData.stock}}</h5>
+      <button class="form-button">Buy Now</button>
+      <button *ngIf="removeCart" class="form-button" (click)="removeToCart(productData.id)">Remove to Cart</button>
+      <button *ngIf="!removeCart" class="form-button" (click)="addToCart()">Add to Cart</button>
+      <div class="quantity-group">
+        <label for="productQuantity">Quantity:</label>
+        <button (click)="handleQuantity('min')">-</button>
+        <input type="text" id="productQuantity" [value]="productQuantity" />
+        <button (click)="handleQuantity('plus')">+</button>
       </div>
     </div>
   </div>
