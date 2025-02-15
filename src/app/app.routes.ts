@@ -31,7 +31,7 @@ export const routes: Routes = [
   {path:'contact-form',component:ContactFormComponent} ,
 
 
-  { path: '**', redirectTo: 'login',title:'Not-found'}
+  { path: '**', redirectTo: 'login',title:'page-not-found'}
 ];
 
 
