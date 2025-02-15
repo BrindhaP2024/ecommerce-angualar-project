@@ -39,8 +39,8 @@ export class LoginComponent {
       next: (response) => {
         if (response.length >= 1) {
           const admin = response[0];
-          sessionStorage.setItem('admin', JSON.stringify(admin));
-          sessionStorage.setItem('email', email);
+          localStorage.setItem('admin', JSON.stringify(admin));
+          localStorage.setItem('email', email);
           this.router.navigate(['dashboard']);
         } else {
           // If not admin, check if it is a regular user
@@ -48,8 +48,8 @@ export class LoginComponent {
             next: (response) => {
               if (response.length >= 1) {
                 const user = response[0];
-                sessionStorage.setItem('user', JSON.stringify(user));
-                sessionStorage.setItem('email', email);
+                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('email', email);
                 this.router.navigate(['productpage']);
               } else {
                 this.messageService.add({
