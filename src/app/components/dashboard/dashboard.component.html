@@ -1,8 +1,7 @@
-<!-- dashboard.component.html -->
-<!-- <p>dashboard works!</p> -->
 <div class="product-list">
-  <h1>Welcome to the seller's dashboard</h1>
-  <p class="message-p">{{ productMessage }}</p>
+  <h1>Welcome to the Seller Dashboard</h1>
+  <p class="message-p" *ngIf="productMessage">{{ productMessage }}</p>
+
   <table>
     <thead>
       <tr>
@@ -11,30 +10,24 @@
         <th>Price</th>
         <th>Color</th>
         <th>Category</th>
-        <th>Performance</th>
-        <th>Display</th>
-        <th>Camera</th>
-        <th>Battery</th>
-        <th>Stock</th>
-        <th>Action</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of productList">
-        <td><img [src]="item.image" alt="{{ item.name }}"></td>
+        <td><img [src]="item.image" alt="{{ item.name }}" class="product-image"></td>
         <td>{{ item.name }}</td>
-        <td>{{ item.price }}</td>
+        <!-- <td>{{ item.price | currency }}</td> -->
+        <td>₹{{ item.price | number:'1.0-2' }}</td>
+
         <td>{{ item.color }}</td>
         <td>{{ item.category }}</td>
-        <td>{{ item.performance }}</td>
-        <td>{{ item.display }}</td>
-        <td>{{ item.camera }}</td>
-        <td>{{ item.battery }}</td>
-        <td>{{ item.stock }}</td>
         <td>
-          <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
-          <a class="adjust-update-link" routerLink="/updateproduct/{{item.id}}">
-            <fa-icon [icon]="iconEdit"></fa-icon>
+
+          <fa-icon (click)="deleteProduct(item.id)" [icon]="iconDelete" class="icon-delete"></fa-icon>
+
+          <a class="adjust-update-link" [routerLink]="['/seller-update-product', item.id]">
+            <fa-icon [icon]="iconEdit" class="icon-edit"></fa-icon>
           </a>
         </td>
       </tr>
