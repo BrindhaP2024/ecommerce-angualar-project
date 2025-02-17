@@ -1,0 +1,36 @@
+<div class="product-list">
+  <h1>Welcome to the Seller Dashboard</h1>
+  <p class="message-p" *ngIf="productMessage">{{ productMessage }}</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td><img [src]="item.image" alt="{{ item.name }}" class="product-image"></td>
+        <td>{{ item.name }}</td>
+        <!-- <td>{{ item.price | currency }}</td> -->
+        <td>₹{{ item.price | number:'1.0-2' }}</td>
+
+        <td>{{ item.color }}</td>
+        <td>{{ item.category }}</td>
+        <td>
+
+          <fa-icon (click)="deleteProduct(item.id)" [icon]="iconDelete" class="icon-delete"></fa-icon>
+
+          <a class="adjust-update-link" [routerLink]="['/seller-update-product', item.id]">
+            <fa-icon [icon]="iconEdit" class="icon-edit"></fa-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

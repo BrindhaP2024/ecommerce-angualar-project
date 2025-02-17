@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <h1 class="logo">
+    <a routerLink="/productpage">ShopSphere</a>
+  </h1>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (keyup.enter)="onSearch()"
+      placeholder="Search Products"
+    />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'" class="nav-menu" [class.active]="menuOpen">
+      <li><a routerLink="/productpage"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/cart"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
+      <li><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+    </ul>
+
+    <ul *ngSwitchCase="'user'" class="nav-menu" [class.active]="menuOpen">
+      <li><a routerLink="/productpage"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/contact-form"><i class="fa fa-mobile"></i> Contact</a></li>
+      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/cart"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
+      <li><a><i class="fas fa-user"></i> {{ userName | titlecase }}</a></li>
+      <li><a (click)="userLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+
+    <ul *ngSwitchCase="'admin'" class="nav-menu" [class.active]="menuOpen">
+      <li><a routerLink="/dashboard"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/selleraddproduct"><i class="fas fa-plus-circle"></i> Add Product</a></li>
+      <li><a><i class="fas fa-user-shield"></i> {{ userName| titlecase }}</a></li>
+      <li><a (click)="userLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>

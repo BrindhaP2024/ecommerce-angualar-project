@@ -1,0 +1,104 @@
+.product-list {
+  padding: 20px;
+  background-color: #f4f7fc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.message-p {
+  color: #4caf50;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #B5828C;
+  color: white;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+td img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+td a {
+  text-decoration: none;
+}
+
+td .adjust-update-link {
+  margin-left: 10px;
+  color: #B5828C;
+  transition: color 0.3s;
+}
+
+td .adjust-update-link:hover {
+  color: #CE5989;
+}
+
+.fa-trash, .fa-edit {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.fa-trash:hover {
+  color: red;
+}
+
+.fa-edit:hover {
+  color: #CE5989;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .product-list {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  td img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .message-p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}

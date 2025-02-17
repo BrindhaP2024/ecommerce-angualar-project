@@ -1,0 +1,90 @@
+<div class="flex justify-content-center align-items-center min-h-screen">
+  <p-card header="Register" [style]="{ width: '400px' }">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="field">
+        <label for="firstName">First Name</label>
+        <input
+          pInputText
+          class="w-full"
+          id="firstName"
+          formControlName="firstName"
+        />
+        <ng-container *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+          <small class="block p-error" *ngIf="firstName.hasError('required')">First name is required</small>
+          <small class="block p-error" *ngIf="firstName.hasError('minlength')">First name must be at least 2 characters long</small>
+          <small class="block p-error" *ngIf="firstName.hasError('maxlength')">First name must be no more than 30 characters long</small>
+          <small class="block p-error" *ngIf="firstName.hasError('pattern')">First name can only contain letters</small>
+        </ng-container>
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name</label>
+        <input
+          pInputText
+          class="w-full"
+          id="lastName"
+          formControlName="lastName"
+        />
+        <ng-container *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+          <small class="block p-error" *ngIf="lastName.hasError('required')">Last name is required</small>
+          <small class="block p-error" *ngIf="lastName.hasError('minlength')">Last name must be at least 2 characters long</small>
+          <small class="block p-error" *ngIf="lastName.hasError('maxlength')">Last name must be no more than 30 characters long</small>
+          <small class="block p-error" *ngIf="lastName.hasError('pattern')">Last name can only contain letters</small>
+        </ng-container>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input pInputText class="w-full" id="email" formControlName="email" />
+        <ng-container *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small class="block p-error" *ngIf="email.hasError('required')">Email is required</small>
+          <small class="block p-error" *ngIf="email.hasError('pattern')">Email is invalid</small>
+        </ng-container>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <p-password
+          formControlName="password"
+          [feedback]="false"
+          [toggleMask]="true"
+          inputId="password"
+          inputStyleClass="w-full"
+          styleClass="w-full"
+        />
+        <ng-container *ngIf="password.invalid && (password.dirty || password.touched)">
+          <small class="block p-error" *ngIf="password.hasError('required')">Password is required</small>
+          <small class="block p-error" *ngIf="password.hasError('minlength')">Password must be at least 8 characters long</small>
+          <small class="block p-error" *ngIf="password.hasError('maxlength')">Password must be no more than 30 characters long</small>
+          <small class="block p-error" *ngIf="password.hasError('pattern')">Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character</small>
+        </ng-container>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <p-password
+          formControlName="confirmPassword"
+          [feedback]="false"
+          [toggleMask]="true"
+          inputId="confirmPassword"
+          inputStyleClass="w-full"
+          styleClass="w-full"
+        />
+        <ng-container *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+          <small class="block p-error">Confirm Password is required</small>
+        </ng-container>
+        <ng-container *ngIf="registerForm.hasError('passwordMismatch') && password.valid && confirmPassword.valid">
+          <small class="block p-error">Password mismatch</small>
+        </ng-container>
+      </div>
+
+      <p-button
+        type="submit"
+        label="Register"
+        styleClass="w-full"
+        [disabled]="registerForm.invalid"
+      ></p-button>
+      <div class="mt-2">Already a member? <a routerLink="/login">Login</a></div>
+    </form>
+  </p-card>
+</div>

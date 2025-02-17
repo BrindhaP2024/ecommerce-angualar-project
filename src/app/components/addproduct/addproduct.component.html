@@ -1,0 +1,115 @@
+<!-- <p>addproduct works!</p> -->
+<div class="add-product-container">
+  <header class="form-header">
+    <h1>Add New Product</h1>
+    @if(addProductMessage) {
+      <div class="success-message">
+        <i class="fa fa-check-circle"></i>
+        {{addProductMessage}}
+      </div>
+    }
+    <button class="cancel-btn" routerLink="/dashboard">
+      <i class="fa fa-times"></i> Cancel
+    </button>
+  </header>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" formControlName="name" placeholder="Enter product name">
+        @if(productForm.get('name')?.invalid && productForm.get('name')?.touched) {
+          <span class="error-message">Product name is required</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" formControlName="price" placeholder="Enter price">
+        @if(productForm.get('price')?.invalid && productForm.get('price')?.touched) {
+          <span class="error-message">Valid price is required</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select formControlName="category">
+          <option value="">Select Category</option>
+          @for(category of categories; track category) {
+            <option [value]="category">{{category}}</option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Stock</label>
+        <input type="number" formControlName="stock" placeholder="Stocks">
+      </div>
+
+      <div class="form-group full-width">
+        <label>Description</label>
+        <textarea formControlName="description" rows="3" placeholder="Product description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Color</label>
+        <input type="color" formControlName="color">
+      </div>
+
+      <div class="image-upload-section full-width">
+        <label>Product Images</label>
+        <div class="image-preview-container">
+          @for(image of imageUrls; track image) {
+            <div class="image-preview">
+              <img [src]="image" alt="Product preview">
+              <button type="button" class="remove-image" (click)="removeImage(image)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          }
+          <button type="button" class="add-image-btn" (click)="addImage()">
+            <i class="fa fa-plus"></i>
+            Add Image
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="specifications-section">
+      <h3>Product Specifications</h3>
+      <div formGroupName="specifications" class="specs-grid">
+        <div class="form-group">
+          <label>Performance</label>
+          <input type="text" formControlName="performance" placeholder="Performance specs">
+        </div>
+
+        <div class="form-group">
+          <label>Display</label>
+          <input type="text" formControlName="display" placeholder="Display specs">
+        </div>
+
+        <div class="form-group">
+          <label>Camera</label>
+          <input type="text" formControlName="camera" placeholder="Camera specs">
+        </div>
+
+        <div class="form-group">
+          <label>Battery</label>
+          <input type="text" formControlName="battery" placeholder="Battery specs">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn" [disabled]="productForm.invalid || isSubmitting">
+        @if(isSubmitting) {
+          <i class="fa fa-spinner fa-spin"></i>
+          Saving...
+        } @else {
+          <i class="fa fa-plus-circle"></i>
+          Add Product
+        }
+      </button>
+    </div>
+  </form>
+</div>

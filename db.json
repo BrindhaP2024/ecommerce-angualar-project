@@ -1,0 +1,314 @@
+{
+  "users": [
+    {
+      "fullName": "dfsdf",
+      "email": "abc@gmail.com",
+      "password": "123",
+      "id": "1"
+    },
+    {
+      "fullName": "Test User",
+      "email": "uk@gmail.com",
+      "password": "123",
+      "id": "2"
+    },
+    {
+      "fullName": "Test User",
+      "email": "uk@gmail.com",
+      "password": "123456",
+      "id": "3"
+    },
+    {
+      "fullName": "Test User",
+      "email": "haseenakhader.uk@gmail.com",
+      "password": "123",
+      "id": "4"
+    },
+    {
+      "fullName": "brindha",
+      "email": "brindha@gmail.com",
+      "password": "12345678",
+      "id": "5"
+    },
+    {
+      "fullName": "Brindha",
+      "email": "br@gmail.com",
+      "password": "123456789",
+      "id": "6"
+    },
+    {
+      "id": "d145",
+      "firstName": "Brindha",
+      "lastName": "Palani",
+      "email": "brindha@gmail.com",
+      "password": "Brindha@12"
+    },
+    {
+      "id": "b608",
+      "firstName": "Brindha",
+      "lastName": "Palani",
+      "email": "brindhabean@gmail.com",
+      "password": "Brin!01234"
+    },
+    {
+      "id": "4672",
+      "firstName": "Harini",
+      "lastName": "Senthil",
+      "email": "harini@gmail.com",
+      "password": "Harini@12"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@gmail.com",
+      "password": "Admin@123",
+      "role": "admin"
+    }
+  ],
+  "products": [
+    {
+      "name": "Apple iPhone 14 Plus (128 GB)",
+      "price": "69900",
+      "category": "Mobile",
+      "color": "black",
+      "description": "15.40 cm (6.1-inch) Super Retina XDR display\nAdvanced camera system for better photos in any light\nCinematic mode now in 4K Dolby Vision up to 30 fps\nAction mode for smooth, steady, handheld videos\nVital safety technology — Crash Detection calls for help when you can’t\nAll-day battery life and up to 20 hours of video playback\nIndustry-leading durability features with Ceramic Shield and water resistance",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": "2"
+    },
+    {
+      "name": "HP Laptop",
+      "price": "50000",
+      "category": "Laptop",
+      "color": "black",
+      "description": "Hp laptop for student and professionals",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+      "id": "3"
+    },
+    {
+      "name": "Nike Shoes",
+      "price": "3000",
+      "category": "Shoes",
+      "color": "Black",
+      "description": "Best shoes for Running",
+      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1eeaacc0-e07c-4024-a5f7-57f2fd23e8a2/air-max-270-g-golf-shoe-Z6vCfs.png",
+      "id": "4"
+    },
+    {
+      "name": "Ben Martin Men's Relaxed Fit Jeans",
+      "price": "650",
+      "category": "Jeans",
+      "color": "blue",
+      "description": "Material typeCotton\nLengthFull length\nStyleRelaxed\nClosure typeButton\nOccasion typeCasual\nCare instructionsHand Wash Only\nCountry of OriginIndia",
+      "image": "https://image.hm.com/assets/hm/8b/ea/8bea8bac07ed75596e5597f6d2997f07cfd81fac.jpg?imwidth=657",
+      "id": "5"
+    },
+    {
+      "name": "Truck",
+      "price": "300",
+      "category": "Toys",
+      "color": "Red",
+      "description": "A toy for 5 year old child",
+      "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
+      "id": "6"
+    },
+    {
+      "name": "Noise Smart Watch",
+      "price": "2000",
+      "category": "Watch",
+      "color": "Black",
+      "description": "Noise smart watch for man and women both",
+      "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
+      "id": "7"
+    },
+    {
+      "name": "Boat Bassheads 100 in Ear Wired Earphones with Mic(Black)",
+      "price": "300",
+      "category": "Headphones",
+      "color": "Black",
+      "description": "The perfect way to add some style and stand out from the crowd with the boAt BassHeads 100 \"Hawk\" inspired earphones. Impedance 16Ω, Sensitivity (dB) 92db ±3db, Frequency Response 20Hz-20KHz",
+      "image": "https://m.media-amazon.com/images/I/313U7Xx9b4L._SX300_SY300_QL70_FMwebp_.jpg",
+      "id": "a8ba"
+    },
+    {
+      "id": "c525",
+      "name": "Nermosa Women Viscose Printed Straight Kurta Pant Set",
+      "price": "499",
+      "category": "Clothing",
+      "color": "Black",
+      "description": "Fit Type: Straight; Ethnic Sets : Straight Kurta and pant Set\nProduct Material :- Viscose || Colour :- Black || Pattern :- Printed ||\nStyle :- Straight Kurta || Sleeve Length :- 3/4 Sleeve || Bottom :- Pant\nSizes :- S,M,L,XL,XXL (All Ragular Size Avalible)\nCasual ,Office wear ,Party ,Wedding , Ragular & Festive\nAdditional Information\nManufacturerNermosa\nPackerNermosa Fashion\nItem Weight300 g\nItem Dimensions LxWxH30 x 10 x 3 Centimeters\nIncluded ComponentsKurta,Pant\nGeneric NameKurta Sets\n",
+      "image": "https://m.media-amazon.com/images/I/51JBTK2grDL.jpg"
+    },
+    {
+      "id": "870c",
+      "name": "Neutra Chronograph Gold-Tone Stainless Steel Watch",
+      "price": "10000",
+      "category": "Watches",
+      "color": "Silver-black",
+      "description": "Sku: FS6093\nCase Size: 44 mm\nMovement: Quartz Chronograph\nPlatform: NEUTRA\nStrap Material: Stainless Steel\nStrap Colour: Gold\nCase Water Resistance: 5 ATM\nCase Material: Stainless Steel\nCase Colour: Gold\nDial Colour: Black\nStrap Fashion Colour: Gold-Tone\nInterchangeable Compatibility: 22 mm\nStrap Width: 22 mm\nClosure: Double Press Deployant Buckle\nStrap Inner Circumference: 200 +/- 5 mm\nCrystal Type: Mineral\nBattery Type: SR621SW",
+      "image": "https://fossil.scene7.com/is/image/FossilPartners/FS6093_main?$sfcc_fos_hi-res$"
+    },
+    {
+      "id": "4140",
+      "name": "Boult Audio Z40 Pro with 100H Playtime, Quad Mic ENC",
+      "price": "1500",
+      "category": "Airpods",
+      "color": "Black",
+      "description": "The Boult Audio Z40 Pro is engineered for audiophiles seeking unparalleled sound quality and long-lasting performance. These wireless earbuds feature 100 hours of playtime on a single charge, ensuring that you can enjoy uninterrupted music, calls, and gaming sessions for days. With Quad Mic ENC (Environmental Noise Cancellation) technology, the Z40 Pro delivers crystal-clear call quality by minimizing background noise, even in crowded or noisy environments. The earbuds are designed for ultimate comfort, with ergonomic and snug-fitting ear tips that keep them secure during workouts, runs, or any active lifestyle.\nWhether you’re working out, commuting, or just relaxing, the Boult Audio Z40 Pro ensures an immersive listening experience with rich bass and clear treble. The IPX7 waterproof rating makes them resistant to sweat and water, making them the perfect companion for outdoor activities. The earbuds also support Bluetooth 5.0, providing a stable and fast connection, and are compatible with both iOS and Android devices.",
+      "image": "https://m.media-amazon.com/images/I/41e8630UMdL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "id": "82f7",
+      "name": "Maybelline 128 Warm Nude Liquid Foundation",
+      "price": "350",
+      "category": "Makeup kits",
+      "color": "Available in multiple shades",
+      "description": "The NARS 3-in-1 Foundation is a versatile product designed to offer a combination of foundation, concealer, and SPF protection in one easy-to-use bottle. It provides a buildable medium-to-full coverage that blurs imperfections, evens out skin tone, and helps protect the skin from harmful UV rays. The formula is infused with skincare benefits that leave the skin feeling nourished and hydrated while providing a natural matte finish that controls shine all day long.\nIdeal for combination to oily skin types, the NARS 3-in-1 Foundation ensures that your complexion remains smooth and flawless with long-lasting wear. It’s lightweight, breathable, and offers a seamless application without the need for touch-ups. Whether you're going for a full-glam look or something more natural, this foundation has you covered.",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR6JhE1gXB1Yv0ktn9Jlp4WE9qPi9aYzwo9YEKGWfHif8f00ZGcD776E73kGlvIhRm9hFaf0GEozmmx4TvfQgtqRNs6Fz4bKR9o0ZFnZG5fUJd0OQFLebCAbA"
+    },
+    {
+      "id": "947b",
+      "name": "Safari Thorium Neo 8 Wheels 55 and 66 Cm Small and Medium Trolley Bags",
+      "price": "4399",
+      "category": "Luggage & Travel Gear",
+      "color": "Blue",
+      "description": "Textured Scratch resistant Polycarbonate shell\nThis light weight trolley luggage comes with a Fixed combination Lock, 8 wheels with smooth manoeuvrability, and contrast beading that gives a premium look to the product\nDimensions: S - 55X40X23 , M - 66X46X27\nColor - Graphite Blue\nMeets most domestic carry-on & check-in size requirements",
+      "image": "https://m.media-amazon.com/images/I/41EWVx8Jk9L._SY300_SX300_.jpg"
+    }
+  ],
+  "user": [
+    {
+      "name": "anil",
+      "email": "anil@user.com",
+      "password": "abc123",
+      "id": "1"
+    },
+    {
+      "name": "peter",
+      "email": "peter@user.com",
+      "password": "abc123",
+      "id": "2"
+    },
+    {
+      "name": "hyden",
+      "email": "hyden@user.com",
+      "password": "abc123",
+      "id": "3"
+    },
+    {
+      "name": "tony",
+      "email": "tony@user.com",
+      "password": "abc123",
+      "id": "4"
+    }
+  ],
+  "cart": [
+    {
+      "name": "Apple iphone 14",
+      "price": "115000",
+      "category": "mobile",
+      "color": "black",
+      "description": "An Apple Product",
+      "image": "https://m.media-amazon.com/images/I/61B0+qQriPL._AC_UY218_.jpg",
+      "quantity": 1,
+      "productId": 1,
+      "userId": 3,
+      "id": "7"
+    },
+    {
+      "name": "Levies Jeans",
+      "price": "5000",
+      "category": "Jeans",
+      "color": "blue",
+      "description": "Confirmable jeans for man ",
+      "image": "https://www.filmibeat.com/wimg/desktop/2012/12/13548612746596.jpg",
+      "quantity": 1,
+      "productId": 5,
+      "userId": 3,
+      "id": "8"
+    },
+    {
+      "id": "86a4",
+      "name": "HP Laptop",
+      "price": "50000",
+      "category": "Laptop",
+      "color": "black",
+      "description": "Hp laptop for student and professionals",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+      "productId": "3",
+      "userId": "d145"
+    },
+    {
+      "id": "40fb",
+      "name": "HP Laptop",
+      "price": "50000",
+      "category": "Laptop",
+      "color": "black",
+      "description": "Hp laptop for student and professionals",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+      "productId": "3",
+      "userId": "d145"
+    },
+    {
+      "id": "c6bd",
+      "name": "I phone 14",
+      "price": "100000",
+      "category": "mobile",
+      "color": "black",
+      "description": "An Apple Product",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "productId": "2",
+      "userId": "d145"
+    },
+    {
+      "id": "f8a6",
+      "name": "Ben Martin Men's Relaxed Fit Jeans",
+      "price": "650",
+      "category": "Jeans",
+      "color": "blue",
+      "description": "Material typeCotton\nLengthFull length\nStyleRelaxed\nClosure typeButton\nOccasion typeCasual\nCare instructionsHand Wash Only\nCountry of OriginIndia",
+      "image": "https://image.hm.com/assets/hm/8b/ea/8bea8bac07ed75596e5597f6d2997f07cfd81fac.jpg?imwidth=657",
+      "productId": "5",
+      "userId": "d145"
+    },
+    {
+      "id": "2afa",
+      "name": "Truck",
+      "price": "300",
+      "category": "Toys",
+      "color": "Red",
+      "description": "A toy for 5 year old child",
+      "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
+      "productId": "6",
+      "userId": "d145"
+    }
+  ],
+  "orders": [
+    {
+      "email": "user@gmail.com",
+      "address": "noida sector x",
+      "contact": "9999",
+      "totalPrice": 104750,
+      "userId": 1,
+      "id": "1"
+    },
+    {
+      "email": "user1@gmail.com",
+      "address": "north",
+      "contact": "8877",
+      "totalPrice": 6100,
+      "userId": 1,
+      "id": "3"
+    },
+    {
+      "id": "0e93",
+      "email": "brindha@gmail.com",
+      "address": "Abc",
+      "contact": "998293493",
+      "totalPrice": 100,
+      "userId": "d145"
+    }
+  ]
+}
