@@ -3,17 +3,17 @@
   <div class="row">
     <div class="col-sm-7">
       <h3>Add shipping address</h3>
-      <p class="message-p">{{orderMsg}}</p>
-      <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
-        <input type="text" class="form-input" name="email" placeholder="Enter User Email" ngModel />
-        <input type="text" class="form-input" name="address" placeholder="Enter User Address" ngModel />
-        <input type="text" class="form-input" name="contact" placeholder="Enter contact details" ngModel />
-        <button class="form-button">Order Now</button>
+      <p class="message-p" *ngIf="orderMsg">{{orderMsg}}</p>
+      <form #orderForm="ngForm" class="common-form" (ngSubmit)="orderNow(orderForm.value)">
+        <input type="email" class="form-input" name="email" placeholder="Enter User Email" ngModel required email />
+        <input type="text" class="form-input" name="address" placeholder="Enter User Address" ngModel required />
+        <input type="tel" class="form-input" name="contact" placeholder="Enter contact details" ngModel required pattern="[0-9]{10}" />
+        <button class="form-button" type="submit" [disabled]="orderForm.invalid">Order Now</button>
       </form>
     </div>
     <div class="col-sm-5">
-      <h3>Total Amount: {{totalPrice}}</h3>
-      <h4>Payment Method : <b>Pay on delivery</b></h4>
+      <h3>Total Amount: ${{totalPrice}}</h3>
+      <h4>Payment Method: <b>Pay on delivery</b></h4>
     </div>
   </div>
 </div>

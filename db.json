@@ -283,6 +283,17 @@
       "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
       "productId": "6",
       "userId": "d145"
+    },
+    {
+      "id": "ce66",
+      "name": "HP Laptop",
+      "price": "50000",
+      "category": "Laptop",
+      "color": "black",
+      "description": "Hp laptop for student and professionals",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+      "productId": "3",
+      "userId": "d145"
     }
   ],
   "orders": [

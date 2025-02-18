@@ -1,4 +1,4 @@
-.my-orders{
+/* .my-orders{
     margin-bottom: 100px;
 }
 .my-orders h1{
@@ -16,4 +16,186 @@
     padding-bottom: 10px;
     border-bottom:1px solid #ddd;
 
+} */
+
+
+/* my-orders.component.css */
+
+.my-orders-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-orders-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.loading-spinner {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.no-orders {
+  text-align: center;
+  color: #555;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.order-list {
+  width: 100%;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.order-table thead {
+  background-color: #f2f2f2;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-table th {
+  font-weight: 600;
+  color: #333;
+}
+
+.order-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.order-item {
+  transition: background-color 0.2s ease;
+}
+
+.order-item:hover {
+  background-color: #eef;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.status-pending {
+  background-color: #ffc107;
+  /* Amber/Warning */
+}
+
+.status-processing {
+  background-color: #007bff;
+  /* Blue/Primary */
+}
+
+.status-shipped {
+  background-color: #28a745;
+  /* Green/Success */
+}
+
+.status-delivered {
+  background-color: #17a2b8;
+  /* Cyan/Info */
+}
+
+.status-cancelled {
+  background-color: #dc3545;
+  /* Red/Danger */
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+.cancel-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .my-orders-container {
+    padding: 15px;
+  }
+
+  .my-orders-title {
+    font-size: 22px;
+  }
+
+  .order-table {
+    border: none;
+    /* Remove border for a cleaner look on small screens */
+  }
+
+  .order-table thead {
+    display: none;
+    /* Hide thead on small screens */
+  }
+
+  .order-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  .order-table td {
+    display: block;
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: none;
+    position: relative;
+    padding-left: 50%;
+    /* Make space for the data label */
+  }
+
+  .order-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .cancel-button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

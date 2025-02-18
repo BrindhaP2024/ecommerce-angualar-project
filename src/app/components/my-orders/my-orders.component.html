@@ -1,39 +1,49 @@
-<div class="my-orders">
-  <h1>My Orders</h1>
-  <div class="row">
-    <div class="col-sm-2">
-      <span>Orders</span>
-    </div>
-    <div class="col-sm-2">
-      <span>Order Id</span>
-    </div>
-    <div class="col-sm-2">
-      <span>Price</span>
-    </div>
-    <div class="col-sm-2">
-      <span>Status</span>
-    </div>
-    <div class="col-sm-2">
-      <span>Cancel Order</span>
-    </div>
-  </div>
-  <div class="row" *ngFor="let order of orderData">
-    <div class="col-sm-2">
-      <img class="order-img" src="https://www.clipartmax.com/png/middle/210-2106541_track-my-order-beach-volleyball.png"
-        alt="">
-    </div>
-    <div class="col-sm-2">
-      <span>#{{order.id}}</span>
-    </div>
-    <div class="col-sm-2">
-      <span>{{order.totalPrice}}</span>
-    </div>
-    <div class="col-sm-2">
-      <span>In Progress</span>
-    </div>
-    <div class="col-sm-2">
-      <button class="form-button" (click)="cancelOrder(order.id)">Cancel Order</button>
-    </div>
+<div class="my-orders-container">
+  <h1 class="my-orders-title">My Orders</h1>
+
+  <div *ngIf="loading" class="loading-spinner">
+    Loading...
   </div>
 
+  <div *ngIf="!loading && (!orderData || orderData.length === 0)" class="no-orders">
+    <p>No orders placed yet.</p>
+  </div>
+
+  <div *ngIf="!loading && orderData && orderData.length > 0" class="order-list">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Total Price</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderData" class="order-item">
+          <td data-label="Order ID">#{{ order.id }}</td>
+          <td data-label="Date">{{ order.orderDate | date: 'mediumDate' }}</td>
+          <td data-label="Total Price">${{ order.totalPrice }}</td>
+          <td data-label="Status">
+            <span class="order-status" [ngClass]="{
+              'status-pending': order.status === 'pending',
+              'status-processing': order.status === 'processing',
+              'status-shipped': order.status === 'shipped',
+              'status-delivered': order.status === 'delivered',
+              'status-cancelled': order.status === 'cancelled'
+            }">
+              {{ order.status || 'Processing' }}
+            </span>
+          </td>
+          <td data-label="Actions">
+            <button class="cancel-button" (click)="cancelOrder(order.id)"
+              [disabled]="order.status === 'cancelled' || order.status === 'delivered'">
+              {{ (order.status === 'cancelled' || order.status === 'delivered') ? 'Cannot Cancel' : 'Cancel Order' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
