@@ -17,6 +17,7 @@ export class CheckoutComponent implements OnInit {
   totalPrice: number = 0;
   cartData: cart[] | undefined;
   orderMsg: string | undefined;
+  selectedPayment: string = '';  // New: Store selected payment method
 
   constructor(private product: ProductService, private router: Router) { }
 
@@ -32,7 +33,6 @@ export class CheckoutComponent implements OnInit {
           }
         });
         this.totalPrice = price + (price / 10) + 100 - (price / 10);
-        console.warn(this.totalPrice);
       },
       error: (error) => {
         console.error('Error fetching cart data:', error);
@@ -45,6 +45,12 @@ export class CheckoutComponent implements OnInit {
     let userId = user && JSON.parse(user).id;
 
     if (userId && this.totalPrice > 0) {
+      if (!this.selectedPayment) {
+        this.orderMsg = "Please select a payment method.";
+        setTimeout(() => (this.orderMsg = undefined), 3000);
+        return;
+      }
+
       const orderData: order = {
         id: 0,
         userId: userId,
@@ -54,14 +60,13 @@ export class CheckoutComponent implements OnInit {
         email: data.email,
         address: data.address,
         contact: data.contact,
+        paymentMethod: this.selectedPayment
       };
 
       this.product.orderNow(orderData).subscribe({
         next: (result) => {
           if (result) {
-            this.orderMsg = "Order has been placed!";
-
-            // Delete cart items after placing the order
+            this.orderMsg = "Order has been placed successfully!";
             if (this.cartData) {
               this.cartData.forEach(item => {
                 if (item.id !== undefined && item.id !== null) {
@@ -82,8 +87,7 @@ export class CheckoutComponent implements OnInit {
         }
       });
     } else {
-      console.warn('User not logged in or total price is invalid.');
-      this.orderMsg = "Please login to place order.";
+      this.orderMsg = "Please login to place an order.";
       setTimeout(() => {
         this.orderMsg = undefined;
         this.router.navigate(['/login']);

@@ -17,8 +17,8 @@ export interface product {
   image: string;
   description: string;
   id: number;
-  quantity?: number; // Make quantity optional
-  productId?: number; // Make productId optional
+  quantity?: number;
+  productId?: number;
 }
 
 export interface cart {
@@ -28,8 +28,8 @@ export interface cart {
   color: string;
   image: string;
   description: string;
-  id?: number; // Make id optional
-  quantity?: number; // Make quantity optional
+  id?: number;
+  quantity?: number;
   productId: number;
   userId: number;
 }
@@ -51,4 +51,5 @@ export interface order {
   email: string;
   address: string;
   contact: string;
+  paymentMethod: string;
 }

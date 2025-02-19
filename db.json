@@ -298,6 +298,7 @@
   ],
   "orders": [
     {
+      "paymentMethod":"Net Banking",
       "email": "user@gmail.com",
       "address": "noida sector x",
       "contact": "9999",
@@ -306,6 +307,7 @@
       "id": "1"
     },
     {
+      "paymentMethod":"Net Banking",
       "email": "user1@gmail.com",
       "address": "north",
       "contact": "8877",
@@ -314,6 +316,7 @@
       "id": "3"
     },
     {
+      "paymentMethod":"Net Banking",
       "id": "0e93",
       "email": "brindha@gmail.com",
       "address": "Abc",

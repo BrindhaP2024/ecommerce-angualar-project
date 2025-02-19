@@ -35,9 +35,22 @@ export class ProductService {
     return this.http.put<product>(`${this.productApiUrl}/${product.id}`, product);
   }
 
+  // searchProduct(query: string): Observable<product[]> {
+  //   return this.http.get<product[]>(`${this.productApiUrl}?q=${query}`);
+  // }
+  // searchProduct(query: string): Observable<product[]> {
+  //   return this.http.get<product[]>(`${this.productApiUrl}?q=${query}`);
+  // }
+  // searchProduct(query: string): Observable<product[]> {
+  //   console.log("API Call:", `${this.productApiUrl}?name_like=${query}`);
+  //   return this.http.get<product[]>(`${this.productApiUrl}?name_like=${query}`);
+  // }
   searchProduct(query: string): Observable<product[]> {
-    return this.http.get<product[]>(`${this.productApiUrl}?q=${query}`);
+    const searchUrl = `${this.productApiUrl}?name_like=${query}`;
+    console.log("API Call:", searchUrl); // Debugging
+    return this.http.get<product[]>(searchUrl);
   }
+
 
   localAddToCart(data: product) {
     let cartData: product[] = [];

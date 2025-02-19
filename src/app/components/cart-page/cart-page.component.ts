@@ -44,7 +44,6 @@ export class CartPageComponent implements OnInit {
     }
   }
 
-  // Calculate price summary (price, discount, tax, total)
   calculatePriceSummary(): void {
     let totalPrice = this.cartData.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
     this.priceSummary = {
