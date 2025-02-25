@@ -47,10 +47,9 @@ export class ProductService {
   // }
   searchProduct(query: string): Observable<product[]> {
     const searchUrl = `${this.productApiUrl}?name_like=${query}`;
-    console.log("API Call:", searchUrl); // Debugging
+    console.log("API Call:", searchUrl);
     return this.http.get<product[]>(searchUrl);
   }
-
 
   localAddToCart(data: product) {
     let cartData: product[] = [];

@@ -3,28 +3,25 @@
     <a routerLink="/home" class="logo">ShopSphere</a>
   </h1>
 
+  <div class="nav-search">
+    <input
+      type="text"
+      #searchInput
+      (keyup)="searchProduct($event)"
+      (blur)="hideSearch()"
+      placeholder="Search Products by Name or Category"
+    />
+    <button (click)="submitSearch()">
+      <i class="fa fa-search"></i>
+    </button>
 
-<div class="nav-search">
-  <input
-    type="text"
-    #searchInput
-    (keyup)="searchProduct($event)"
-    (blur)="hideSearch()"
-    placeholder="Search Products"
-  />
-  <button (click)="submitSearch()">
-    <i class="fa fa-search"></i>
-  </button>
+    <ul class="suggested-search" *ngIf="searchResult.length">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{ item.name }} ({{ item.category }})</a>
+      </li>
+    </ul>
+  </div>
 
-  <ul class="suggested-search" *ngIf="searchResult.length">
-    <li *ngFor="let item of searchResult">
-      <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
-    </li>
-  </ul>
-</div>
-
-
-  <!-- Navigation Menu -->
   <div [ngSwitch]="menuType">
     <ul *ngSwitchCase="'default'" class="nav-menu" [class.active]="menuOpen">
       <li><a routerLink="/productpage"><i class="fas fa-home"></i> Home</a></li>
@@ -51,7 +48,6 @@
     </ul>
   </div>
 
-  <!-- Hamburger Menu (For Mobile) -->
   <div class="hamburger" (click)="toggleMenu()">
     <span></span>
     <span></span>

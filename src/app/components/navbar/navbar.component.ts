@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { ProductService } from '../../services/products.service';
 import { product } from '../../interfaces/data-type';
 import { CommonModule, NgIf } from '@angular/common';
@@ -8,12 +8,12 @@ import { debounceTime, Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, NgIf],
+  imports: [CommonModule, NgIf],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  @ViewChild('searchInput') searchInputRef!: ElementRef; // Search input reference
+  @ViewChild('searchInput') searchInputRef!: ElementRef;
 
   menuType: string = 'default';
   userName: string = '';
@@ -28,11 +28,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadNavbarData();
 
-    // Handle search input debounce
     this.searchSubscription = this.searchSubject.pipe(debounceTime(300)).subscribe(query => {
       if (query.length > 2) {
         this.productService.searchProduct(query).subscribe((result: product[]) => {
-          this.searchResult = result.slice(0, 5);
+          this.searchResult = result.filter(
+            (item) =>
+              item.name.toLowerCase().includes(query.toLowerCase()) ||
+              item.category.toLowerCase().includes(query.toLowerCase())
+          ).slice(0, 5); // Limit results to 5
         });
       } else {
         this.searchResult = [];
@@ -69,7 +72,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.menuType = 'default';
     }
 
-    // Updates cart count dynamically
     this.productService.cartData.subscribe((items: any[]) => {
       this.cartItems = items.length;
     });
@@ -86,22 +88,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.menuOpen = !this.menuOpen;
   }
 
-  // searchProduct(event: KeyboardEvent): void {
-  //   const input = event.target as HTMLInputElement;
-  //   this.searchSubject.next(input.value.trim());
-  // }
-
   searchProduct(event: KeyboardEvent): void {
     const input = event.target as HTMLInputElement;
     const query = input.value.trim();
-
     if (query.length > 2) {
       this.searchSubject.next(query);
     } else {
       this.searchResult = [];
     }
   }
-
 
   redirectToDetails(id: number): void {
     this.router.navigate([`/details/${id}`]);
@@ -116,8 +111,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   submitSearch(): void {
     const searchValue = this.searchInputRef.nativeElement.value.trim();
-    console.log("Search Triggered:", searchValue);  // Debugging
-
     if (searchValue) {
       this.router.navigate(['/search', searchValue]);
       this.searchResult = [];

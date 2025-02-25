@@ -206,31 +206,7 @@
   ],
   "cart": [
     {
-      "name": "Apple iphone 14",
-      "price": "115000",
-      "category": "mobile",
-      "color": "black",
-      "description": "An Apple Product",
-      "image": "https://m.media-amazon.com/images/I/61B0+qQriPL._AC_UY218_.jpg",
-      "quantity": 1,
-      "productId": 1,
-      "userId": 3,
-      "id": "7"
-    },
-    {
-      "name": "Levies Jeans",
-      "price": "5000",
-      "category": "Jeans",
-      "color": "blue",
-      "description": "Confirmable jeans for man ",
-      "image": "https://www.filmibeat.com/wimg/desktop/2012/12/13548612746596.jpg",
-      "quantity": 1,
-      "productId": 5,
-      "userId": 3,
-      "id": "8"
-    },
-    {
-      "id": "86a4",
+      "id": "a9ea",
       "name": "HP Laptop",
       "price": "50000",
       "category": "Laptop",
@@ -241,64 +217,20 @@
       "userId": "d145"
     },
     {
-      "id": "40fb",
-      "name": "HP Laptop",
-      "price": "50000",
-      "category": "Laptop",
-      "color": "black",
-      "description": "Hp laptop for student and professionals",
-      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
-      "productId": "3",
-      "userId": "d145"
-    },
-    {
-      "id": "c6bd",
-      "name": "I phone 14",
-      "price": "100000",
-      "category": "mobile",
-      "color": "black",
-      "description": "An Apple Product",
-      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
-      "productId": "2",
-      "userId": "d145"
-    },
-    {
-      "id": "f8a6",
-      "name": "Ben Martin Men's Relaxed Fit Jeans",
-      "price": "650",
-      "category": "Jeans",
-      "color": "blue",
-      "description": "Material typeCotton\nLengthFull length\nStyleRelaxed\nClosure typeButton\nOccasion typeCasual\nCare instructionsHand Wash Only\nCountry of OriginIndia",
-      "image": "https://image.hm.com/assets/hm/8b/ea/8bea8bac07ed75596e5597f6d2997f07cfd81fac.jpg?imwidth=657",
-      "productId": "5",
-      "userId": "d145"
-    },
-    {
-      "id": "2afa",
-      "name": "Truck",
-      "price": "300",
-      "category": "Toys",
-      "color": "Red",
-      "description": "A toy for 5 year old child",
-      "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
-      "productId": "6",
-      "userId": "d145"
-    },
-    {
-      "id": "ce66",
-      "name": "HP Laptop",
-      "price": "50000",
-      "category": "Laptop",
-      "color": "black",
-      "description": "Hp laptop for student and professionals",
-      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
-      "productId": "3",
+      "id": "2382",
+      "name": "Nike Shoes",
+      "price": "3000",
+      "category": "Shoes",
+      "color": "Black",
+      "description": "Best shoes for Running",
+      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1eeaacc0-e07c-4024-a5f7-57f2fd23e8a2/air-max-270-g-golf-shoe-Z6vCfs.png",
+      "productId": "4",
       "userId": "d145"
     }
   ],
   "orders": [
     {
-      "paymentMethod":"Net Banking",
+      "paymentMethod": "Net Banking",
       "email": "user@gmail.com",
       "address": "noida sector x",
       "contact": "9999",
@@ -307,7 +239,7 @@
       "id": "1"
     },
     {
-      "paymentMethod":"Net Banking",
+      "paymentMethod": "Net Banking",
       "email": "user1@gmail.com",
       "address": "north",
       "contact": "8877",
@@ -316,7 +248,7 @@
       "id": "3"
     },
     {
-      "paymentMethod":"Net Banking",
+      "paymentMethod": "Net Banking",
       "id": "0e93",
       "email": "brindha@gmail.com",
       "address": "Abc",
