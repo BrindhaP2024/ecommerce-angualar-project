@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ProductService } from '../../services/products.service';
 import { product } from '../../interfaces/data-type';
 import { CommonModule, NgIf } from '@angular/common';
@@ -8,7 +8,7 @@ import { debounceTime, Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule, NgIf,RouterLink,RouterLinkActive,RouterOutlet],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })

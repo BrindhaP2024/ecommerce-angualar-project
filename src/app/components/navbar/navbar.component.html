@@ -1,6 +1,6 @@
 <nav class="navbar">
   <h1>
-    <a routerLink="/home" class="logo">ShopSphere</a>
+    <a routerLink="/home" routerLinkActive="active" class="logo">ShopSphere</a>
   </h1>
 
   <div class="nav-search">
@@ -24,25 +24,25 @@
 
   <div [ngSwitch]="menuType">
     <ul *ngSwitchCase="'default'" class="nav-menu" [class.active]="menuOpen">
-      <li><a routerLink="/productpage"><i class="fas fa-home"></i> Home</a></li>
-      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a routerLink="/cart-page"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
-      <li><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+      <li><a routerLink="/home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/cart-page" routerLinkActive="active"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
+      <li><a routerLink="/login" routerLinkActive="active"><i class="fas fa-sign-in-alt"></i> Login</a></li>
     </ul>
 
     <ul *ngSwitchCase="'user'" class="nav-menu" [class.active]="menuOpen">
-      <li><a routerLink="/productpage"><i class="fas fa-home"></i> Home</a></li>
-      <li><a routerLink="/contact-form"><i class="fa fa-mobile"></i> Contact</a></li>
-      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a routerLink="/cart-page"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
+      <li><a routerLink="/home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/contact-form" routerLinkActive="active"><i class="fa fa-mobile"></i> Contact</a></li>
+      <li><a routerLink="/about" routerLinkActive="active"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/cart-page" routerLinkActive="active"><i class="fas fa-shopping-cart"></i> Cart ({{ cartItems }})</a></li>
       <li><a><i class="fas fa-user"></i> {{ userName | titlecase }}</a></li>
       <li><a (click)="userLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
 
     <ul *ngSwitchCase="'admin'" class="nav-menu" [class.active]="menuOpen">
-      <li><a routerLink="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
-      <li><a routerLink="/about"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a routerLink="/add-product"><i class="fas fa-plus-circle"></i> Add Product</a></li>
+      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a routerLink="/about" routerLinkActive="active"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a routerLink="/add-product" routerLinkActive="active"><i class="fas fa-plus-circle"></i> Add Product</a></li>
       <li><a><i class="fas fa-user-shield"></i> {{ userName | titlecase }}</a></li>
       <li><a (click)="userLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
@@ -54,3 +54,4 @@
     <span></span>
   </div>
 </nav>
+<router-outlet></router-outlet>
